@@ -1,0 +1,3 @@
+﻿battle_id,source_file,round,event_key,unit_name,unit_side,max_troops,pre_troops,post_troops,missing_troops_before,wounded_pool_before,actual_recovery,is_lifesteal,recovery_skill,hb_active,defeated,replay_verdict,residual
+6319219,战报_6319219_pid7420980.json,0,183,周泰,my,9500,8982,9447,518,465,465,False,GENERIC_HEAL,False,False,EXACT_CAPACITY_CLAMP,0
+6319219,战报_6319219_pid7420980.json,0,195,周泰,my,9500,9447,9447,53,0,0,True,锦帆百翎,False,False,EXACT_CAPACITY_CLAMP,0

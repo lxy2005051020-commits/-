@@ -1,0 +1,6 @@
+case_id,event,delta_t,t_after,wounded_pool,evidence
+1082822_R3,初始反算,,4368,,S09_CaseC_3976plus392
+1082822_R3,第一段伤害,-392,3976,,S09_CaseC
+1082822_R3,第一段后急救,142,4118,,S09_CaseC
+1082822_R3,第二段伤害,-367,3751,,S09_CaseC
+1082822_R3,第二段后急救,142,3893,,S09_CaseC

@@ -1,0 +1,11 @@
+# Ignore raw binary asset folders
+拆解案（20份）/
+qa_browser/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# System files
+.DS_Store
+Thumbs.db

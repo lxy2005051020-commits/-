@@ -1,0 +1,123 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第一部分：规则基底</title><style>body{margin:0;background:#edf1f6;color:#203047;font:16px/1.85 "Microsoft YaHei","Segoe UI",sans-serif}main{max-width:1060px;margin:30px auto;padding:40px 56px;background:white;border-radius:14px;box-shadow:0 8px 35px #24395410}h1{font-size:29px;line-height:1.5;color:#152c4a}h2{font-size:23px;margin-top:42px;border-left:5px solid #2b6f75;padding-left:14px}h3{font-size:19px;color:#235a65;margin-top:26px}a{color:#17697e;text-decoration:none;overflow-wrap:anywhere}blockquote{margin:20px 0;padding:10px 20px;background:#f0f5fa;border-left:3px solid #9fb5c8}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.7;margin:20px 0}th{background:#e9f1f7;color:#233e59}td,th{padding:11px 10px;border:1px solid #dce4ed;vertical-align:top}tr:nth-child(even){background:#fafbfd}code{font-family:Consolas,monospace;font-size:.9em;overflow-wrap:anywhere}pre{padding:17px;background:#f3f6f9;overflow-x:auto;white-space:pre-wrap}figure{margin:24px 0}svg{width:100%;height:auto;display:block}.flow{display:flex;align-items:center;gap:9px;justify-content:center;flex-wrap:wrap;background:#f3f7fa;padding:20px}.flow span{background:#e5f0ed;border:1px solid #bfdbd4;padding:7px 12px;border-radius:6px}em{color:#5d6d80;font-size:14px}strong{color:#163e58}.topline{color:#5d6d80;font-size:13px}@media(max-width:800px){main{margin:0;padding:22px 18px;border-radius:0}table{font-size:12px}td,th{padding:7px}}@media print{body{background:white}main{box-shadow:none;margin:0;padding:0}h2,h3{break-after:avoid}figure,tr,pre{break-inside:avoid}a{color:inherit}}</style></head><body><main><h2 id="14">1.4 伤兵机制：治疗量需要通过容量与时点才能兑现</h2>
+<h3 id="_6">缺兵、伤兵与不可在战斗内恢复的部分</h3>
+<p>设本次模型中的兵力上限为 N，当前兵力为 T，缺兵量 M=N−T，可恢复伤兵容量为 W。<strong>缺兵量并不等于可恢复容量。</strong> 正常可恢复状态下，实际治疗同时受名义治疗量 H、伤兵容量和缺兵量限制：</p>
+<pre><code class="language-text">实际恢复 = min(H, W, M)
+恢复后：T 增加实际恢复量，W 同量减少
+禁疗生效或目标阵亡等阻断成立时，实际恢复为 0
+</code></pre>
+<p>在有直接支持的兵刃受击等样本范围内，Research 的伤兵模型采用“每笔实际损兵的90%向下取整入池”；跨单个回合边界，剩余伤兵保留90%并向下取整，同一回合内跨武将行动未观察到这种衰减。<a href="https://github.com/lxy2005051020-commits/sgs-state-mechanics-research/blob/95995aa3cfb08fe834f4ca43572635e6d478e729/STAGE13_B1_WOUNDED_TROOP_MECHANISM_CONTRACT.md">S05</a></p>
+<pre><code class="language-text">单笔入池：ΔW = floor(0.90 × 实际损兵)
+治疗消耗：W' = W − 实际恢复
+单次跨回合：W' = floor(0.90 × W)
+</code></pre>
+<p><em>适用边界：兵刃与部分持续伤害具有直接支持；谋略及部分持续伤害的90%比例仍是有界支持，连续多回合递推属模型默认值。W 是从事件与恢复上限重建的研究变量，不表示战报直接公开该隐藏字段。<a href="https://github.com/lxy2005051020-commits/sgs-state-mechanics-research/blob/95995aa3cfb08fe834f4ca43572635e6d478e729/STAGE13_B1_WOUNDED_TROOP_MECHANISM_CONTRACT.md">S05</a><a href="https://github.com/lxy2005051020-commits/sgs-state-mechanics-research/blob/95995aa3cfb08fe834f4ca43572635e6d478e729/stage13_b1_recovery_capacity_authority_proof_v1.md">S06</a></em></p>
+<p><figure><svg xmlns="http://www.w3.org/2000/svg" width="1160" height="660" viewBox="0 0 1160 660" role="img" aria-label="伤兵容量流转"><defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#62748b" stroke-width="1.6"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><g font-family="Microsoft YaHei, Noto Sans SC, sans-serif" fill="#172a43"><text x="40" y="48" font-size="27" font-weight="700">图2  伤兵容量：损兵、可恢复量与治疗消耗</text><text x="40" y="83" font-size="17" fill="#56677e">以兵刃受击与单次跨回合规则为例｜来源S05、S06｜研究变量不等于战报公开隐藏字段</text><rect x="45" y="140" width="290" height="110" rx="12" fill="#edf2fc" stroke="#b5c4d8"/><text x="190" y="176" text-anchor="middle" font-size="19"><tspan x="190" dy="0">实际损兵 ΔT</tspan><tspan x="190" dy="26">当前兵力T减少</tspan><tspan x="190" dy="26">缺兵量M增加</tspan></text><rect x="435" y="140" width="290" height="110" rx="12" fill="#e8f5ef" stroke="#b5c4d8"/><text x="580" y="176" text-anchor="middle" font-size="19"><tspan x="580" dy="0">可恢复伤兵池 W</tspan><tspan x="580" dy="26">逐笔新增 floor(0.90×ΔT)</tspan><tspan x="580" dy="26">始终受缺兵量M限制</tspan></text><rect x="825" y="140" width="290" height="110" rx="12" fill="#edf2fc" stroke="#b5c4d8"/><text x="970" y="176" text-anchor="middle" font-size="19"><tspan x="970" dy="0">治疗与恢复</tspan><tspan x="970" dy="26">H实际=min(H名义,W,M)</tspan><tspan x="970" dy="26">T增加，W同量减少</tspan></text><path d="M335 195L435 195" fill="none" stroke="#62748b" stroke-width="2" marker-end="url(#arrow)"/><path d="M725 195L825 195" fill="none" stroke="#62748b" stroke-width="2" marker-end="url(#arrow)"/><rect x="435" y="340" width="290" height="105" rx="12" fill="#fff3e3" stroke="#b5c4d8"/><text x="580" y="373.5" text-anchor="middle" font-size="19"><tspan x="580" dy="0">跨一个回合边界</tspan><tspan x="580" dy="26">剩余W保留90%并向下取整</tspan><tspan x="580" dy="26">回合内跨行动不作该衰减</tspan></text><path d="M580 250L580 340" fill="none" stroke="#62748b" stroke-width="2" marker-end="url(#arrow)"/><rect x="45" y="340" width="290" height="105" rx="12" fill="#fff3e3" stroke="#b5c4d8"/><text x="190" y="373.5" text-anchor="middle" font-size="19"><tspan x="190" dy="0">当前不可战斗内恢复缺口</tspan><tspan x="190" dy="26">N − T − W</tspan><tspan x="190" dy="26">不命名为战后永久死兵</tspan></text><path d="M435 392L335 392" fill="none" stroke="#62748b" stroke-width="2" marker-end="url(#arrow)"/><rect x="825" y="340" width="290" height="105" rx="12" fill="#fcecee" stroke="#b5c4d8"/><text x="970" y="373.5" text-anchor="middle" font-size="19"><tspan x="970" dy="0">动态阻断</tspan><tspan x="970" dy="26">禁疗有效或目标阵亡等</tspan><tspan x="970" dy="26">实际恢复可能为0</tspan></text><path d="M970 340L970 250" fill="none" stroke="#62748b" stroke-width="2" marker-end="url(#arrow)"/><text x="45" y="520" font-size="18" fill="#56677e"><tspan x="45">急救：合格受击结算后判定。休整：目标自身行动开始窗口结算。</tspan><tspan x="45" dy="32">同一名义治疗量，可能因伤兵容量、禁疗与发生时点不同，兑现为不同实际恢复量。</tspan><tspan x="45" dy="32">90%生成比率并非所有伤害家族均已逐类实证；连续多回合递推亦需与单回合证据分层。</tspan></text></g></svg></figure></p>
+<p>N−T−W可用来描述“当前模型下无法在战斗内治疗的缺口”，<strong>不能直接命名为战后永久死兵</strong>。本次材料不足以把战斗内伤兵池与战后回城恢复、征兵成本按固定比例连成一套数值公式。</p>
+<h3 id="_7">最小实战切片：两段伤害之间发生了什么</h3>
+<p>Research 急救证据文件记录了战报 <code>战报_1082822_pid1077896.json</code> 第3回合的一段【轻勇飞燕】事件。下面只截取周瑜连续承受的两段；这是仓库研究文件转录的战报片段，本次未重新读取完整原始JSON。<a href="https://github.com/lxy2005051020-commits/sgs-state-mechanics-research/blob/95995aa3cfb08fe834f4ca43572635e6d478e729/states/persistent/first_aid/BATTLE_REPORT_EVIDENCE.md">S09</a></p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th style="text-align: right;">兵力变化</th>
+<th style="text-align: right;">结算后兵力</th>
+<th>能说明什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一段前</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">4,368</td>
+<td>由紧随后续损兵与余兵反算</td>
+</tr>
+<tr>
+<td>第一段伤害</td>
+<td style="text-align: right;">−392</td>
+<td style="text-align: right;">3,976</td>
+<td>先扣减兵力</td>
+</tr>
+<tr>
+<td>急救执行</td>
+<td style="text-align: right;">+142</td>
+<td style="text-align: right;">4,118</td>
+<td>恢复插在两段伤害之间</td>
+</tr>
+<tr>
+<td>第二段伤害</td>
+<td style="text-align: right;">−367</td>
+<td style="text-align: right;">3,751</td>
+<td>第二段面对更新后的兵力状态</td>
+</tr>
+<tr>
+<td>急救执行</td>
+<td style="text-align: right;">+142</td>
+<td style="text-align: right;">3,893</td>
+<td>再次出现独立恢复结算</td>
+</tr>
+</tbody>
+</table>
+<p>两段合计伤害759，实际恢复284，净损兵475。这个片段确认的是<strong>受击与恢复交错发生</strong>，不能单独证明“多段一定弱于单段”，也不能据此断定第二段伤害为何变为367。</p>
+<p>急救是受击后恢复，不能阻止这笔伤害已经造成的致死；不同来源的恢复强度也不相同，部分按治疗率，部分按当次损兵比例。增加攻击段数是否降低攻击方净收益，必须继续比较双方的触发和总收益。<a href="https://github.com/lxy2005051020-commits/sgs-state-mechanics-research/blob/95995aa3cfb08fe834f4ca43572635e6d478e729/states/persistent/first_aid/MECHANISM_CONTRACT.md">S07</a></p>
+<h3 id="_8">同一治疗预算，为什么晚一个回合可能少恢复</h3>
+<p>下面是依据兵刃入池与单回合衰减规则构造的教学算例，所有数字均为自设，不对应真实武将战法：</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th style="text-align: right;">当前兵力 T</th>
+<th style="text-align: right;">可恢复容量 W</th>
+<th style="text-align: right;">当前不可战斗内恢复缺口 N−T−W</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始，N=10,000</td>
+<td style="text-align: right;">10,000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>受到1,000实际损兵</td>
+<td style="text-align: right;">9,000</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td>名义治疗400，实际恢复400</td>
+<td style="text-align: right;">9,400</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td>再受到500实际损兵</td>
+<td style="text-align: right;">8,900</td>
+<td style="text-align: right;">950</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr>
+<td>跨一个回合，无其他受击或恢复</td>
+<td style="text-align: right;">8,900</td>
+<td style="text-align: right;">855</td>
+<td style="text-align: right;">245</td>
+</tr>
+<tr>
+<td>名义治疗1,000，受容量限制仅恢复855</td>
+<td style="text-align: right;">9,755</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">245</td>
+</tr>
+</tbody>
+</table>
+<p>若最后一笔治疗在跨回合前完成，模型中可恢复950；拖到跨回合后只能恢复855，差95。<strong>这证明时点能影响兑现量，未证明急救全面优于休整。</strong> 真实比较还需考虑恢复概率、来源强度、覆盖目标、过早治疗造成的容量闲置，以及能否撑过当前致死伤害。</p>
+<p>休整的配速也有直接案例：在 <code>战报_1101874_pid1096972.json</code> 中，目标行动后才获得休整，首跳延至下一回合；目标行动前获得，则可在当回合自身行动开始时结算。已有休整在震慑下仍可能结算，不能把“不能行动”等同于“无法治疗”。<a href="https://github.com/lxy2005051020-commits/sgs-state-mechanics-research/blob/95995aa3cfb08fe834f4ca43572635e6d478e729/states/persistent/recuperation/MECHANISM_CONTRACT.md">S08</a><a href="https://github.com/lxy2005051020-commits/sgs-state-mechanics-research/blob/95995aa3cfb08fe834f4ca43572635e6d478e729/states/persistent/recuperation/ROUND1_RESTART_BATTLE_REPORT_EVIDENCE.md">S10</a></p>
+<h3 id="_9">从规则落到配将判断</h3>
+<ol>
+<li><strong>配速服务于关键节点。</strong>治疗、净化或增益应尽量赶上需要保护的行动窗口；同时考虑敌方伤害先后，不能把“治疗越快越好”当通则。</li>
+<li><strong>保护先核对攻击类型。</strong>援护承接普攻，与分担、分摊有不同入口；保护主将前，需要确认对手主要压力是否经过该入口。</li>
+<li><strong>恢复先看可兑现容量。</strong>名义治疗高、实际恢复低，可能来自伤兵不足、禁疗或时点差异；重复恢复来源还可能发生覆盖。</li>
+<li><strong>攻击频率作为独立变量。</strong>多段增加输出与己方触发机会，也可能增加对方急救、反击或次数型防御交互；后续章节再用受控实验判断净收益。</li>
+</ol>
+<p>本章建立了后续比较需要的三个基本单位：<strong>一次行动机会、一个独立伤害事件、一笔可兑现恢复。</strong> 战法收益应沿这三个单位逐步追踪，再回到主将生存、战损和持续作战目标评价。</p>
+<hr />
+</main></body></html>

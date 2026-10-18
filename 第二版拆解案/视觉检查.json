@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "method": "Chrome headless screenshots manually inspected",
+  "views": [
+    "qa/正文首屏.png",
+    "qa/图1预览.png",
+    "qa/图2预览.png",
+    "qa/正文13预览.png",
+    "qa/正文14预览.png"
+  ],
+  "scope": "正文首屏、两张完整图、1.3规则表与1.4前半段截图；未宣称逐屏检查完整长页",
+  "anchor_screenshot_issue": "锚点截图为空白，改用同正文片段与同样式的独立预览后正常；空白图已替换"
+}
