@@ -1,0 +1,116 @@
+{
+  "A": [
+    {
+      "name": "曹操",
+      "hero_type": 10014,
+      "position": 1,
+      "level": 48,
+      "stage": 2,
+      "skills": [
+        2010810,
+        2009510,
+        2014310
+      ]
+    },
+    {
+      "name": "夏侯惇",
+      "hero_type": 10923,
+      "position": 2,
+      "level": 48,
+      "stage": 5,
+      "skills": [
+        2002210,
+        2021710,
+        2200210
+      ]
+    },
+    {
+      "name": "满宠",
+      "hero_type": 10122,
+      "position": 3,
+      "level": 48,
+      "stage": 5,
+      "skills": [
+        2018910,
+        2083710,
+        2022910
+      ]
+    }
+  ],
+  "B": [
+    {
+      "name": "曹操",
+      "hero_type": 10014,
+      "position": 1,
+      "level": 48,
+      "stage": 2,
+      "skills": [
+        2010810,
+        2401610,
+        2014310
+      ]
+    },
+    {
+      "name": "夏侯惇",
+      "hero_type": 10923,
+      "position": 2,
+      "level": 48,
+      "stage": 5,
+      "skills": [
+        2002210,
+        2021710,
+        2200210
+      ]
+    },
+    {
+      "name": "满宠",
+      "hero_type": 10122,
+      "position": 3,
+      "level": 48,
+      "stage": 5,
+      "skills": [
+        2018910,
+        2083710,
+        2022910
+      ]
+    }
+  ],
+  "C": [
+    {
+      "name": "曹操",
+      "hero_type": 10014,
+      "position": 1,
+      "level": 48,
+      "stage": 2,
+      "skills": [
+        2010810,
+        2009510,
+        2014310
+      ]
+    },
+    {
+      "name": "夏侯惇",
+      "hero_type": 10923,
+      "position": 2,
+      "level": 48,
+      "stage": 5,
+      "skills": [
+        2002210,
+        2021710,
+        2200210
+      ]
+    },
+    {
+      "name": "满宠",
+      "hero_type": 10122,
+      "position": 3,
+      "level": 48,
+      "stage": 5,
+      "skills": [
+        2018910,
+        2083710,
+        2013610
+      ]
+    }
+  ]
+}

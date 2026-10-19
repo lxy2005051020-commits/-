@@ -1,0 +1,16 @@
+{
+  "model": "M1",
+  "cases": 5,
+  "pair_combinations": 15,
+  "fraction_arithmetic": true,
+  "packet_rows": 720,
+  "frontier_rows": 404,
+  "scope": [
+    "Same exogenous physical/strategy exposure packets for both configurations",
+    "Other damage modifiers absent; no saturation, pierce, evasion or resistance",
+    "No troops, deaths, attributes, RNG, attacks, control, healing, wounded pools or future feedback recalculated",
+    "Both protection providers effective in the budget window",
+    "F is separately specified original-only Fujia-extra exposure, not inferred from a real changed battle",
+    "Yudi target pairs are enumerated, with no selection probabilities assigned"
+  ]
+}

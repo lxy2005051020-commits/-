@@ -1,0 +1,34 @@
+{
+  "model": "M2",
+  "paired_inputs": 64,
+  "variants": [
+    "A",
+    "C"
+  ],
+  "probability_weights": null,
+  "time_order": {
+    "0": "inherited state",
+    "10": "Man cleanse opportunity",
+    "19": "before enemy action",
+    "20": "enemy new debuff",
+    "29": "before Cao action",
+    "30": "Cao cleanse opportunity",
+    "35": "optional enemy reapplication",
+    "39": "before Xiahou action"
+  },
+  "assumptions": [
+    "single dispellable debuff, no expiry in window",
+    "opportunities and targets are exogenous gates",
+    "all 64 binary combinations enumerated without weights",
+    "no troops, healing, counterattacks or source restoration simulation",
+    "availability incorporates action eligibility, actual activation and cooldown as appropriate",
+    "same input sequence for A and C; adding a gate does not model removing Feigong healing"
+  ],
+  "excluded": [
+    "probability estimates",
+    "current-game implementation claim",
+    "win rate",
+    "net troop loss",
+    "full battle results"
+  ]
+}

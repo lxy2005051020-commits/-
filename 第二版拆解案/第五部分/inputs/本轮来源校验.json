@@ -1,0 +1,152 @@
+[
+  {
+    "path": "sources\\alternative_reports\\战报_6269104_pid7357077.json",
+    "bytes": 980334,
+    "sha256": "e3ded71944ad1477e552f8200a88bf0682b96e1bac3a33a3f9c5d7515ef1a329"
+  },
+  {
+    "path": "sources\\alternative_reports\\战报_6271096_pid7359862.json",
+    "bytes": 1454141,
+    "sha256": "5d6e5c5bdee39ac734c869707c79aa9820c094bad9f7159a53f06a24b693edcc"
+  },
+  {
+    "path": "sources\\alternative_reports\\战报_6272900_pid7362279.json",
+    "bytes": 951791,
+    "sha256": "39d76f78d9073e48c29178b08dce038606968f6a3732b663a061317f06fb3ed0"
+  },
+  {
+    "path": "sources\\alternative_reports\\战报_6273998_pid7363826.json",
+    "bytes": 907808,
+    "sha256": "2a9f7e2883fd275ebc8ad6c2fa9e1d6a2cded39d93d425eff69ee114efb607f2"
+  },
+  {
+    "path": "sources\\alternative_reports\\战报_6274004_pid7363835.json",
+    "bytes": 335471,
+    "sha256": "afbae661a9156843469deaeaa0102b32831c2f822c9b6ae58d67bb6969aecd72"
+  },
+  {
+    "path": "sources\\alternative_reports\\战报_6275155_pid7365430.json",
+    "bytes": 239368,
+    "sha256": "0750026a00346550310549a3c534cbab54632427c71008d825eeb6238809139d"
+  },
+  {
+    "path": "sources\\alternative_reports\\战报_6281469_pid7374152.json",
+    "bytes": 1280863,
+    "sha256": "f030e8f664e7c2a115048f43f67ed253319d180f28b795522bfccb6bc330fe0f"
+  },
+  {
+    "path": "sources\\local_db\\战法类型_1_指挥.csv",
+    "bytes": 1126900,
+    "sha256": "eee32f3275b7b3916c00b2c4d5be04cee0a4888dfdd25c0fc9f3236191b5babc"
+  },
+  {
+    "path": "sources\\local_db\\战法类型_2_主动.csv",
+    "bytes": 1602254,
+    "sha256": "195dd8bbe12ea9f273b663d9a42895b0d95ce8579dd491631adcfd69dfed87bc"
+  },
+  {
+    "path": "sources\\local_db\\战法类型_4_被动.csv",
+    "bytes": 629207,
+    "sha256": "9677fa3aa3c063464b26c9a7d970c3382b503025e6151a67b4bc952c319dc185"
+  },
+  {
+    "path": "sources\\local_db\\战法类型_8_兵种.csv",
+    "bytes": 231426,
+    "sha256": "12c006e59e3642a2c9f74b0cceafb1a04f650a0fe0b3f25feb4ef524fb5145cd"
+  },
+  {
+    "path": "sources\\reports\\战报_6247774_pid7327923.json",
+    "bytes": 1023593,
+    "sha256": "e3f25a6f52bcedfcda430e36cb09e6e5805ea74eea456ba4ec492a01a94ce704"
+  },
+  {
+    "path": "sources\\reports\\战报_6261259_pid7346636.json",
+    "bytes": 1674898,
+    "sha256": "3b9219e0e2d1aab7153ab4029a0009e2f75bb61906d8a4b052c4ff5b98629808"
+  },
+  {
+    "path": "sources\\reports\\战报_6268846_pid7356705.json",
+    "bytes": 1489188,
+    "sha256": "1dbf47a4e9e366969c4e2d0b56197643f196170e2a1af75b4cfc5deee533a85f"
+  },
+  {
+    "path": "sources\\reports\\战报_6273037_pid7362462.json",
+    "bytes": 962865,
+    "sha256": "381480604fa63f0718cecfcf8a0f5a54aea5c003ff5e52ce58864a91b80d867a"
+  },
+  {
+    "path": "sources\\reports\\战报_6273038_pid7362464.json",
+    "bytes": 1281165,
+    "sha256": "71313879a14bd7840992e9e8675cd952116e6174e0fdd9ce6fae70f2246383ec"
+  },
+  {
+    "path": "sources\\主要风险对手承伤分解.csv",
+    "bytes": 2343,
+    "sha256": "a0fe8ddc561d377a93d484f53627bc523ebeb509e830ae66569fee088f6a252a"
+  },
+  {
+    "path": "sources\\公开资料旁证.json",
+    "bytes": 567,
+    "sha256": "2d7454b751603d9b59d17827b0c16eaf1403f1164f1bbf92de963447eb7656dd"
+  },
+  {
+    "path": "sources\\同三将候选战报.json",
+    "bytes": 198399,
+    "sha256": "bfc676673bc00087fdc1f9d5a98a1c9c7b8c4b382aabf2b7082f21b46f3a5742"
+  },
+  {
+    "path": "sources\\同配置PVP完整配置.csv",
+    "bytes": 119610,
+    "sha256": "be44b4f449482c3d13059b5df97b7ce07a4055fe27b861f608da0e0ec4a319af"
+  },
+  {
+    "path": "sources\\同配置PVP对局总表.csv",
+    "bytes": 9857,
+    "sha256": "89ee22176e910d21834a3c05ab7dbff0ac1b837ef91e7e876a9d92edc3feba95"
+  },
+  {
+    "path": "sources\\同配置PVP逐事件兵力账本.csv",
+    "bytes": 519340,
+    "sha256": "6724b77672902f3b9a8c8e9e4da0c119f76df2268cc05c8caf728731a5875ff8"
+  },
+  {
+    "path": "sources\\官方更新核对.json",
+    "bytes": 670,
+    "sha256": "c3772f80e31e6aeac5fec45d70ec8f4c01960ab820dfdffc8b9cb5c1c0915f7e"
+  },
+  {
+    "path": "sources\\官方状态规则表_V1.csv",
+    "bytes": 5229,
+    "sha256": "0087aa5ea785a5ec0961d118a30cff3c303d047ee06b7d97eecc59140acb5ad1"
+  },
+  {
+    "path": "sources\\来源清单.json",
+    "bytes": 3219,
+    "sha256": "95835c90258655fd0be70e8a5734f035df16c949358463dd9af06d4f8eb06243"
+  },
+  {
+    "path": "sources\\相邻PVP兵力衔接.csv",
+    "bytes": 2135,
+    "sha256": "3398b9dd145c0eba624ebe26d0775a3bdd69211aa37f303661b2f1e95fc73dce"
+  },
+  {
+    "path": "sources\\第四部分_交付独立核查.json",
+    "bytes": 3469,
+    "sha256": "fe412fd7226b77179221f67c63ef8fa423d572c9aae0459873769ac3702fcbc7"
+  },
+  {
+    "path": "sources\\第四部分_分析口径汇总.json",
+    "bytes": 574,
+    "sha256": "e11bf7ef5f2509c5283052c32e1464b586241f7417ccfc041fb9e8ac3a04ea03"
+  },
+  {
+    "path": "sources\\第四部分_同配置PVP核查.json",
+    "bytes": 4894,
+    "sha256": "3af852f4dcef93f1f01e5ff5eb5886b608f228ac28957869e3e66674a067e631"
+  },
+  {
+    "path": "sources\\第四部分_用户当前稿快照.md",
+    "bytes": 19786,
+    "sha256": "4bbc1c384356ae81eb86aa9bd3e79865ca9d0ebaa3d4194eb529922dbd358e22"
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "model": "M1: isolated protection exposure budget, not a complete battle simulator",
+  "unit": "standardized loss-budget units, not troops or victory probability",
+  "teng_reduction": 0.4796,
+  "yudi_reduction": 0.25,
+  "yudi_round_limit": 4,
+  "teng_source": {
+    "report_id": 6247774,
+    "G": 0,
+    "E": 176,
+    "text": "[曹操]受到的兵刃伤害降低了47.96% (-50.46%)",
+    "scope": "one observed pre-battle value, not a universal scaling formula"
+  },
+  "yudi_source": {
+    "full_id": "2401610",
+    "source": "战法类型_1_指挥.csv",
+    "line": 1284
+  },
+  "heroes": [
+    "曹操",
+    "夏侯惇",
+    "满宠"
+  ],
+  "assumptions": [
+    "Same exogenous physical/strategy exposure packets for both configurations",
+    "Other damage modifiers absent; no saturation, pierce, evasion or resistance",
+    "No troops, deaths, attributes, RNG, attacks, control, healing, wounded pools or future feedback recalculated",
+    "Both protection providers effective in the budget window",
+    "F is separately specified original-only Fujia-extra exposure, not inferred from a real changed battle",
+    "Yudi target pairs are enumerated, with no selection probabilities assigned"
+  ],
+  "cases": [
+    {
+      "id": "P_uniform",
+      "name": "均匀兵刃",
+      "physical": 1000,
+      "strategy": 0,
+      "early_share": 0.8,
+      "hero_weights": [
+        1,
+        1,
+        1
+      ],
+      "fujia_extra": 0
+    },
+    {
+      "id": "P_concentrated",
+      "name": "援护集中兵刃",
+      "physical": 1000,
+      "strategy": 0,
+      "early_share": 0.8,
+      "hero_weights": [
+        0.05,
+        0.9,
+        0.05
+      ],
+      "fujia_extra": 0
+    },
+    {
+      "id": "M_early",
+      "name": "前段谋略占优",
+      "physical": 200,
+      "strategy": 800,
+      "early_share": 0.8,
+      "hero_weights": [
+        1,
+        1,
+        1
+      ],
+      "fujia_extra": 0
+    },
+    {
+      "id": "F_mixed",
+      "name": "持续火法压力",
+      "physical": 200,
+      "strategy": 800,
+      "early_share": 0.5,
+      "hero_weights": [
+        1,
+        1,
+        1
+      ],
+      "fujia_extra": 250
+    },
+    {
+      "id": "M_late",
+      "name": "后段谋略占优",
+      "physical": 200,
+      "strategy": 800,
+      "early_share": 0.2,
+      "hero_weights": [
+        1,
+        1,
+        1
+      ],
+      "fujia_extra": 0
+    }
+  ]
+}

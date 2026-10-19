@@ -1,0 +1,33 @@
+{
+  "pages": 7,
+  "page_details": [
+    {
+      "page": 1,
+      "chars": 740
+    },
+    {
+      "page": 2,
+      "chars": 879
+    },
+    {
+      "page": 3,
+      "chars": 938
+    },
+    {
+      "page": 4,
+      "chars": 857
+    },
+    {
+      "page": 5,
+      "chars": 942
+    },
+    {
+      "page": 6,
+      "chars": 930
+    },
+    {
+      "page": 7,
+      "chars": 1056
+    }
+  ]
+}

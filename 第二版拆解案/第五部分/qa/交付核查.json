@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "source_files_checked": 30,
+  "original_report_totals_checked": 2,
+  "configurations": 3,
+  "unique_skills": 11,
+  "changed_slots": {
+    "B": "曹操2 藤甲→御敌",
+    "C": "满宠3 非攻→刮骨"
+  },
+  "budget_comparisons": 15,
+  "control_paired_inputs": 64,
+  "control_gate_sanity_counts": {
+    "19": 8,
+    "29": 8,
+    "39": 3
+  },
+  "counts_note": "Enumeration counts have no probability weights and are not in-game success rates.",
+  "pdf_pages": [
+    {
+      "page": 1,
+      "characters": 740
+    },
+    {
+      "page": 2,
+      "characters": 879
+    },
+    {
+      "page": 3,
+      "characters": 938
+    },
+    {
+      "page": 4,
+      "characters": 857
+    },
+    {
+      "page": 5,
+      "characters": 942
+    },
+    {
+      "page": 6,
+      "characters": 930
+    },
+    {
+      "page": 7,
+      "characters": 1056
+    }
+  ],
+  "scope": "Hashes, legal nine-slot structure, isolated model arithmetic, declared timing logic and PDF text bounds. No full battle simulation or live-game efficacy validation."
+}
